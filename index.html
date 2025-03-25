@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Трансформация и анимация</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <form id="setting" class="settings-form">
+        <div class="form-sections">
+            <!-- Координаты рисунка -->
+            <div class="form-section">
+                <p>Координаты рисунка<br>
+                    <label for="cx">x: </label>
+                    <input type="number" id="cx" value="300" max="600" min="0">
+                    <span class="animation-field finish-field hidden">
+                        <label for="cx_finish">до: </label>
+                        <input type="number" id="cx_finish" value="300" max="600" min="0">
+                    </span><br>
+                    <label for="cy">y: </label>
+                    <input type="number" id="cy" value="300" max="600" min="0">
+                    <span class="animation-field finish-field hidden">
+                        <label for="cy_finish">до: </label>
+                        <input type="number" id="cy_finish" value="450" max="600" min="0">
+                    </span>
+                </p>
+            </div>
+
+            <!-- Пути перемещения -->
+            <div class="form-section path-section hidden">
+                <p class="section-title">Пути перемещения<br>
+                    <select id="pathType">
+                        <option value="0">Буквой "Г"</option>
+                        <option value="1">По кругу</option>
+                    </select>
+                </p>
+            </div>
+
+            <!-- Масштаб -->
+            <div class="form-section">
+                <p class="section-title">Масштаб<br>
+                    <label for="scaleX">по x: </label>
+                    <input type="number" id="scaleX" value="1" step="0.1">
+                    <span class="animation-field hidden">
+                        <label for="scaleXEnd">до: </label>
+                        <input type="number" id="scaleXEnd" value="1.5" step="0.1">
+                    </span><br>
+                    <label for="scaleY">по y: </label>
+                    <input type="number" id="scaleY" value="1" step="0.1">
+                    <span class="animation-field hidden">
+                        <label for="scaleYEnd">до: </label>
+                        <input type="number" id="scaleYEnd" value="1.5" step="0.1">
+                    </span>
+                </p>
+            </div>
+
+            <!-- Поворот setting -->
+            <div class="form-section">
+                <p class="section-title">Поворот<br>
+                    <label for="rotate">угол: </label>
+                    <input type="number" id="rotate" value="0" step="1">
+                    <span class="animation-field hidden">
+                        <label for="rotateEnd">до: </label>
+                        <input type="number" id="rotateEnd" value="180" step="1">
+                    </span>
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Кнопки и переключатели -->
+        <div class="form-controls">
+            <div class="control-row">
+                <input type="button" value="Нарисовать" id="drawButton">
+                <input type="button" value="Анимировать" id="animateButton" class="hidden">
+                <input type="button" value="Очистить" id="clearButton">
+
+            </div>
+            <div class="control-row">
+                <label><input type="checkbox" id="animate"> Включить анимацию?</label>
+                <select id="animationType">
+                    <option value="linear">linear</option>
+                    <option value="elastic">elastic</option>
+                    <option value="bounce">bounce</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <label class="path-checkbox hidden"><input type="checkbox" id="pathAnimate"> Перемещение вдоль пути?</label>
+            </div>
+        </div>
+    </form>
+
+    <svg></svg>
+    <script src="JavaScript/image.js"></script>
+    <script src="JavaScript/path.js"></script>
+    <script src="JavaScript/main.js"></script>
+    <svg id="d3">
+    </svg>
+    <script src="JavaScript/test.js"></script>
+</body>
+</html>
