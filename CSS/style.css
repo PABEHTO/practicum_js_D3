@@ -1,62 +1,16 @@
-.form-sections {
-    display: flex;
-    gap: 20px;
-}
-
-.form-section {
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-}
-
-.path-section.hidden {
-    display: none;
-}
-
-.form-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.control-row {
-    display: flex;
-    gap: 10px;
     align-items: center;
+    margin: 20px;
 }
-
-.animation-field.hidden {
-    display: none;
+#svg-container {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 }
-
-.finish-field.hidden {
-    display: none;
-}
-
-.path-checkbox.hidden {
-    display: none;
-}
-
-.hidden {
-    display: none;
-}
-
-.form-section label {
-    margin-right: 5px;
-}
-
-.form-section input[type="number"] {
-    width: 70px;
-    margin-bottom: 9px;
-}
-
-.form-section select {
-    padding: 5px;
-}
-
-.form-controls input[type="button"] {
-    padding: 5px 10px;
-}
-
-.form-controls select {
-    padding: 5px;
+#controls {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
 }
